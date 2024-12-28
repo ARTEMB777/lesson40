@@ -17,7 +17,7 @@ const UncontrolledComponent = () => {
 
   return (
     <div>
-      <h1>Uncontrolled Component</h1>
+      <h2>Uncontrolled Component</h2>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
         <input type="text" ref={nameRef} />

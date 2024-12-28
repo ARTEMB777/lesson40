@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function FetchDataComponent() {
-  const [data, setData] = useState(null); // Початкове значення null, бо очікуємо об'єкт
+  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -10,7 +10,7 @@ function FetchDataComponent() {
       try {
         setIsLoading(true);
 
-        const response = await fetch('https://www.omdbapi.com/?apikey=fefd742d&s=');
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -30,12 +30,19 @@ function FetchDataComponent() {
 
   return (
     <div>
-      <h1>Fetch Data Component</h1>
+      <h2>Fetch Data Component</h2>
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {data && <p>Data: {data.title}</p>}
+      {data && (
+        <div>
+          <p><strong>Name:</strong> {data.name}</p>
+          <p><strong>Username:</strong> {data.username}</p>
+          <p><strong>Email:</strong> {data.email}</p>
+        </div>
+      )}
     </div>
   );
 }
 
 export default FetchDataComponent;
+

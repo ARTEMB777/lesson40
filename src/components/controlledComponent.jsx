@@ -23,7 +23,7 @@ const ControlledComponent = () => {
   //Виводимо дані форми
   return (
     <div>
-      <h1>Controlled Component</h1>
+      <h2>Controlled Component</h2>
       <form>
         <label>Name</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} />
